@@ -1,19 +1,28 @@
-package Domain;
-
+package domain;
 
 public class Player extends Person {
 
     private int rating;
     private Position position;
     private PreferedFoot preferedFoot;
-    private int jerseyNumber;
     private double marketValue;
 
+    private Team team;
+    private int jerseyNumber;
 
-    public Player(String name, int age, double height, Position position, int rating) {
-        super(name, age, height);
-        this.position = position;
+
+    public static final Team FREE_AGENT = new Team();
+
+    public Player(String name, int age, int height,double weight, int rating, Position position,PreferedFoot preferedFoot, double marketValue,Team team, int  jerseyNumber) {
+        super(name, age, height, weight);
         this.rating = rating;
+        this.position = position;
+        this.preferedFoot = preferedFoot;
+        this.marketValue = marketValue;
+
+        this.team = team;
+        this.jerseyNumber = jerseyNumber;
+
     }
 
     public int getRating() {
@@ -35,4 +44,5 @@ public class Player extends Person {
     public double getMarketValue() {
         return marketValue;
     }
+
 }
